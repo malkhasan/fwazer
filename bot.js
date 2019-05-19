@@ -42,7 +42,7 @@ client.on("message", message => {
                       }, 10000);
                      })
                     })})}}});
-                      m.edit(message.member + ', **....جارى جمع البيانات**').then( (mtime)=>{
+                    message.edit(message.member + ', **....جارى جمع البيانات**').then( (mtime)=>{
                         setTimeout(() => {
                           let embed = new Discord.RichEmbed()
                         .setColor('RANDOM')
