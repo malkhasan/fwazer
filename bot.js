@@ -23,7 +23,7 @@ client.on("message", message => {
             if(message.content.startsWith("-فوازير")) {
         if(!message.channel.guild) return;
                 if(message.author.bot) return;
-        let channel = message.guild.channels.find("name", "فوازير رمضان 🌙")
+        let channel = message.guild.channels.find("name", "فوازير-رمضان-🌙")
             if(!channel) return message.reply("**لانشاء روم فوازير رمضان -room1 من فضلك اكتب الامر**")
             message.channel.send( message.member + ', **:timer:**').then( (m) =>{
               m.edit( message.member + ', **اسمك**' )
@@ -61,7 +61,7 @@ client.on("message", message => {
             if(!message.channel.guild) return;
                 if(message.author.bot) return;
                 if(!message.member.hasPermission('ADMINISTRATOR')) return message.reply("**تحتاج الى `MANAGE_CHANNELS`**");
-                message.guild.createChannel("فوازير رمضان 🌙", "text").then(c =>{
+                message.guild.createChannel("فوازير-رمضان-🌙", "text").then(c =>{
                     c.overwritePermissions(message.guild.id, {
                         SEND_MESSAGES: false
  
