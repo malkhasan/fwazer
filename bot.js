@@ -19,30 +19,24 @@ client.user.setStatus("dnd")
 
 
 
-
-
-
 client.on("message", message => {
             if(message.content.startsWith("-فوازير")) {
         if(!message.channel.guild) return;
                 if(message.author.bot) return;
         let channel = message.guild.channels.find("name", "فوازير رمضان 🌙")
             if(!channel) return message.reply("**لانشاء روم فوازير رمضان -room1 من فضلك اكتب الامر**")
-            if(channel) {
             message.channel.send( message.member + ', **:timer:**').then( (m) =>{
               m.edit( message.member + ', **اسمك**' )
               m.channel.awaitMessages( m1 => m1.author == message.author,{ maxMatches: 1, time: 60*1000 } ).then ( (m1) => {
                   m1 = m1.first();
                   var name = m1.content;
                   m1.delete();
-                  m.edit(message.member + ', **:timer:**').then( (m) =>{
-                      m.edit( message.member + ', **الاجابة**' )
+                  m.edit(message.member + ', **:timer:**').then( (m2) =>{
+                      m2.edit( message.member + ', **الاجابة**' )
                       setTimeout(() => {
-                        m.delete()
+                        m2.delete()
                       }, 10000);
-                     })
-                    })})}}});
-                    message.edit(message.member + ', **....جارى جمع البيانات**').then( (mtime)=>{
+                    m2.edit(message.member + ', **....جارى جمع البيانات**').then( (mtime)=>{
                         setTimeout(() => {
                           let embed = new Discord.RichEmbed()
                         .setColor('RANDOM')
@@ -57,6 +51,10 @@ client.on("message", message => {
                         }, 3000);
  
                     })
+                })})})}});
+
+
+
 
         client.on('message', message=>{
             if(message.content.startsWith("-room1")) {
