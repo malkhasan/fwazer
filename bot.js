@@ -41,19 +41,7 @@ client.on("message", message => {
                         m.delete()
                       }, 10000);
                      })
-                })
-                })
-              })
-            })
-          })
-        })
-        })
-              })
-          })
-        })
-    }
-}
-        });
+                    })})}}});
                       m.edit(message.member + ', **....جارى جمع البيانات**').then( (mtime)=>{
                         setTimeout(() => {
                           let embed = new Discord.RichEmbed()
@@ -68,20 +56,7 @@ client.on("message", message => {
                           mtime.delete()
                         }, 3000);
  
-                  })
-                })
-                })
-              })
-            })
-          })
-        })
-        })
-              })
-          })
-        })
-    }
-}
-        });
+                    })
 
         client.on('message', message=>{
             if(message.content.startsWith("-room1")) {
