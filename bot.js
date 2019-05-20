@@ -36,13 +36,13 @@ client.on("message", message => {
                       setTimeout(() => {
                         m2.delete()
                       }, 10000);
-                    m2.edit(message.member + ', **....جارى جمع البيانات**').then( (mtime)=>{
+                  m.edit(message.member + ', **....جارى جمع البيانات**').then( (mtime)=>{
                         setTimeout(() => {
                           let embed = new Discord.RichEmbed()
                         .setColor('RANDOM')
-                        .setTitle(`**فوازير رمضان 🌙** [__**${message.guild.name}**__]`)
+                        .setTitle(`**تقديم على رتبه** [__**${message.guild.name}**__]`)
                         .addField('**`الاسم`**', `${name}` , true)
-                        .addField('**`االاجابة`**', `${age}` , true)                   
+                        .addField('**`العمر`**', `${age}` , true)
                         .setFooter(message.author.username,'https://images-ext-2.discordapp.net/external/JpyzxW2wMRG2874gSTdNTpC_q9AHl8x8V4SMmtRtlVk/https/orcid.org/sites/default/files/files/ID_symbol_B-W_128x128.gif')
                         channel.send(embed)
                         }, 2500);
