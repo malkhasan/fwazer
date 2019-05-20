@@ -18,12 +18,11 @@ client.user.setStatus("dnd")
 
 
 
-
 client.on("message", message => {
             if(message.content.startsWith("-فوازير")) {
         if(!message.channel.guild) return;
                 if(message.author.bot) return;
-        let channel = message.guild.channels.find("name", "فوازير-رمضان-🌙")
+        let channel = message.guild.channels.find("name", "فوازير رمضان 🌙")
             if(!channel) return message.reply("**لانشاء روم فوازير رمضان -room1 من فضلك اكتب الامر**")
             message.channel.send( message.member + ', **:timer:**').then( (m) =>{
               m.edit( message.member + ', **اسمك**' )
@@ -36,13 +35,13 @@ client.on("message", message => {
                       setTimeout(() => {
                         m2.delete()
                       }, 10000);
-                  m.edit(message.member + ', **....جارى جمع البيانات**').then( (mtime)=>{
+                    m2.edit(message.member + ', **....جارى جمع البيانات**').then( (mtime)=>{
                         setTimeout(() => {
                           let embed = new Discord.RichEmbed()
                         .setColor('RANDOM')
-                        .setTitle(`**تقديم على رتبه** [__**${message.guild.name}**__]`)
+                        .setTitle(`**فوازير رمضان 🌙** [__**${message.guild.name}**__]`)
                         .addField('**`الاسم`**', `${name}` , true)
-                        .addField('**`العمر`**', `${age}` , true)
+                        .addField('**`االاجابة`**', `${age}` , true)                   
                         .setFooter(message.author.username,'https://images-ext-2.discordapp.net/external/JpyzxW2wMRG2874gSTdNTpC_q9AHl8x8V4SMmtRtlVk/https/orcid.org/sites/default/files/files/ID_symbol_B-W_128x128.gif')
                         channel.send(embed)
                         }, 2500);
@@ -52,6 +51,7 @@ client.on("message", message => {
  
                     })
                 })})})}});
+
 
 
 
