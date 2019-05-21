@@ -15,45 +15,36 @@ client.user.setGame(`فوازير رمضان 🌙 II -فوازير`,"https://www
 client.user.setStatus("dnd")
 });
 
-
-
-
 client.on("message", message => {
-            if(message.content.startsWith("-فوازير")) {
-        if(!message.channel.guild) return;
-                if(message.author.bot) return;
-        let channel = message.guild.channels.find("name", "فوازير-رمضان🌙")
-            if(!channel) return message.reply("**لانشاء روم فوازير رمضان -room1 من فضلك اكتب الامر**")
-            message.channel.send( message.member + ', **:timer:**').then( (m) =>{
-              m.edit( message.member + ', **اسمك**' )
-              m.channel.awaitMessages( m1 => m1.author == message.author,{ maxMatches: 1, time: 60*1000 } ).then ( (m1) => {
-                  m1 = m1.first();
-                  var name = m1.content;
-                  m.edit(message.member + ', **:timer:**').then( (m2) =>{
-                      m2.edit( message.member + ', **الاجابة**' )
-                      setTimeout(() => {
-                        m2.delete()
-                      }, 10000);
-                    m2.edit(message.member + ', **....جارى جمع البيانات**').then( (mtime)=>{
-                        setTimeout(() => {
-                          let embed = new Discord.RichEmbed()
-                        .setColor('RANDOM')
-                        .setTitle(`**فوازير-رمضان🌙** [__**${message.guild.name}**__]`)
-                        .addField('**`الاسم`**', `${name}` , true)
-                        .addField('**`االاجابة`**', `${age}` , true)                   
-                        .setFooter(message.author.username,'https://images-ext-2.discordapp.net/external/JpyzxW2wMRG2874gSTdNTpC_q9AHl8x8V4SMmtRtlVk/https/orcid.org/sites/default/files/files/ID_symbol_B-W_128x128.gif')
-                        channel.send(embed)
-                        }, 2500);
-                        setTimeout(() => {
-                          mtime.delete()
-                        }, 3000);
- 
-                    })
-                })})})}});
-
-
-
-
+  if(message.content.startsWith("-فوازير")) {
+if(!message.channel.guild) return;
+      if(message.author.bot) return;
+let channel = message.guild.channels.find("name", "فوازير-رمضان🌙")
+  if(!channel) return message.reply("**لانشاء روم فوازير رمضان -room1 من فضلك اكتب الامر**")
+  message.channel.send( message.member + ', **:timer:**').then( (m) =>{
+    m.edit( message.member + ', **اسمك**' )
+    m.channel.awaitMessages( m1 => m1.author == message.author,{ maxMatches: 1, time: 60*1000 } ).then ( (m1) => {
+        m1 = m1.first();
+        var name = m1.content;
+        m.edit(message.member + ', **:timer:**').then( (m) =>{
+            m.edit( message.member + ', **الاجابة**' )
+            m.channel.awaitMessages( m2 => m2.author == message.author,{ maxMatches: 1, time: 60*1000 } ).then ( (m2) => {
+            m2=m2.first()
+            age=m2.content
+          
+          m.edit(message.member + ', **....جارى جمع البيانات**').then( (mtime)=>{
+              
+                let embed = new Discord.RichEmbed()
+              .setColor('RANDOM')
+              .setTitle(`**فوازير-رمضان🌙** [__**${message.guild.name}**__]`)
+              .addField('**`الاسم`**', `${name}` , true)    
+              .addField('**`االاجابة`**', `${age}` , true)                   
+              .setFooter(message.author.username,'https://images-ext-2.discordapp.net/external/JpyzxW2wMRG2874gSTdNTpC_q9AHl8x8V4SMmtRtlVk/https/orcid.org/sites/default/files/files/ID_symbol_B-W_128x128.gif')
+              channel.send(embed)
+              
+          })  
+          })
+      })})})}});
 
         client.on('message', message=>{
             if(message.content.startsWith("-room1")) {
@@ -68,9 +59,8 @@ client.on("message", message => {
                 })
     message.channel.send("**✅ تم انشاء روم فوازير رمضان بنجاح**")
             }
-            })
-            
-            
+          })
+       
 //////////////////////
 //////////////////////
 
@@ -86,4 +76,7 @@ message.channel.send(`** #${args}**`); // محطوط # عشان محد يستخ�
 
 ///////////////////
 //////////////////
-client.login(process.env.BOT_TOKEN)
+
+///////////////////
+//////////////////
+client.login('process.env.BOT_TOKEN')
