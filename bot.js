@@ -22,7 +22,7 @@ client.on("message", message => {
             if(message.content.startsWith("-فوازير")) {
         if(!message.channel.guild) return;
                 if(message.author.bot) return;
-        let channel = message.guild.channels.find("name", "فوازير رمضان 🌙")
+        let channel = message.guild.channels.find("name", "فوازير-رمضان🌙")
             if(!channel) return message.reply("**لانشاء روم فوازير رمضان -room1 من فضلك اكتب الامر**")
             message.channel.send( message.member + ', **:timer:**').then( (m) =>{
               m.edit( message.member + ', **اسمك**' )
@@ -39,7 +39,7 @@ client.on("message", message => {
                         setTimeout(() => {
                           let embed = new Discord.RichEmbed()
                         .setColor('RANDOM')
-                        .setTitle(`**فوازير رمضان 🌙** [__**${message.guild.name}**__]`)
+                        .setTitle(`**فوازير-رمضان🌙** [__**${message.guild.name}**__]`)
                         .addField('**`الاسم`**', `${name}` , true)
                         .addField('**`االاجابة`**', `${age}` , true)                   
                         .setFooter(message.author.username,'https://images-ext-2.discordapp.net/external/JpyzxW2wMRG2874gSTdNTpC_q9AHl8x8V4SMmtRtlVk/https/orcid.org/sites/default/files/files/ID_symbol_B-W_128x128.gif')
@@ -61,7 +61,7 @@ client.on("message", message => {
             if(!message.channel.guild) return;
                 if(message.author.bot) return;
                 if(!message.member.hasPermission('ADMINISTRATOR')) return message.reply("**تحتاج الى `MANAGE_CHANNELS`**");
-                message.guild.createChannel("فوازير-رمضان-🌙", "text").then(c =>{
+                message.guild.createChannel("فوازير-رمضان🌙", "text").then(c =>{
                     c.overwritePermissions(message.guild.id, {
                         SEND_MESSAGES: false
  
