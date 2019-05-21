@@ -29,7 +29,6 @@ client.on("message", message => {
               m.channel.awaitMessages( m1 => m1.author == message.author,{ maxMatches: 1, time: 60*1000 } ).then ( (m1) => {
                   m1 = m1.first();
                   var name = m1.content;
-                  m1.delete();
                   m.edit(message.member + ', **:timer:**').then( (m2) =>{
                       m2.edit( message.member + ', **الاجابة**' )
                       setTimeout(() => {
