@@ -20,7 +20,7 @@ client.on("message", message => {
 if(!message.channel.guild) return;
       if(message.author.bot) return;
 let channel = message.guild.channels.find("name", "فوازير-رمضان🌙")
-  if(!channel) return message.reply("**لانشاء روم فوازير رمضان -room1 من فضلك اكتب الامر**")
+  if(!channel) return message.reply("**لقد انتهي وقت الاجابة**")
   message.channel.send( message.member + ', **:timer:**').then( (m) =>{
     m.edit( message.member + ', **اسمك**' )
     m.channel.awaitMessages( m1 => m1.author == message.author,{ maxMatches: 1, time: 60*1000 } ).then ( (m1) => {
