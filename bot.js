@@ -33,7 +33,7 @@ let channel = message.guild.channels.find("name", "فوازير-رمضان🌙")
             m2=m2.first()
               age=m2.contenft
 		      setTimeout(() => {
-                        m2.delete()
+                        m.delete()
                       }, 10000);  
           m.edit(message.member + ', **....جارى جمع البيانات**').then( (mtime)=>{
               
