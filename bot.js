@@ -31,8 +31,10 @@ let channel = message.guild.channels.find("name", "فوازير-رمضان🌙")
             m.edit( message.member + ', **الاجابة**' )
             m.channel.awaitMessages( m2 => m2.author == message.author,{ maxMatches: 1, time: 60*1000 } ).then ( (m2) => {
             m2=m2.first()
-            age=m2.content
-             m2.delete()
+              age=m2.contenft
+		      setTimeout(() => {
+                        m2.delete()
+                      }, 10000);  
           m.edit(message.member + ', **....جارى جمع البيانات**').then( (mtime)=>{
               
                 let embed = new Discord.RichEmbed()
